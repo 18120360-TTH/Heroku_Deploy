@@ -3,7 +3,8 @@ const handlebars = require('express-handlebars');
 const path = require('path')
 const morgan = require('morgan')
 const app = express()
-const port = 3000
+//const port = 3000
+const PORT = process.env.PORT || 3000; //PORT to deploy in heroku
 
 // Static file
 app.use(express.static(path.join(__dirname, 'public')))
@@ -34,6 +35,11 @@ app.get('/cart', (req, res) => {res.render('cart')})
 app.get('/checkout', (req, res) => {res.render('checkout')})
 app.get('*', (req, res) => {res.render('404')})
 
-app.listen(port, () => {
+/*app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+*/
+
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
