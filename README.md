@@ -6,3 +6,7 @@ Phase 01 tasks:
 - [ ] Xóa các file không dùng
 - [x] Báo cáo (Có ảnh chụp giao diện và mô hình quan hệ)
 - [ ] Hosting code
+
+#web_deployment_important_notes
+- PORT value in ./src/index.js has been change (to deploy with heroku)
+- Heroku ignore module in "devDependencies" from package.json, so all modules needed must be moved from "devDependencies" to "dependencies" in package.json
